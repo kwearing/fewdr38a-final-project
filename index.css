@@ -80,7 +80,7 @@ a:hover {
     line-height: 1.5rem;
 }
 
-.navigation .join-button {
+.join-button {
     display: inline-block;
     word-wrap: nowrap;
     background-color: black;
@@ -171,7 +171,7 @@ li, li footer {
 
 /*MAIN BANNERS*/
 .promo-heading-home {
-    background-image: url(https://i.imgur.com/975TY0y.jpg);
+    background-image: url(https://nbrs.com.au/_next/image?url=https%3A%2F%2Fcms.nbrs.com.au%2Fweb%2Fmedia%2F_2400xAUTO_crop_center-center_none%2Fimage-1_2880x1800_2023-06-06-064623_gduh.jpg&w=1920&q=75);
     background-position: center;
     height: 600px;
     justify-content: center;
@@ -509,10 +509,10 @@ li, li footer {
     background-attachment: fixed;
     background-position: top;
     background-size: cover;
-    height: 100vh;
+    height: 150vh;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-content: flex-start;
     position: relative;
 }
 
@@ -535,6 +535,7 @@ li, li footer {
 .overlay h2 {
     margin-bottom: 0px;
     font-size: 1.5rem;
+    text-align: left;
 }
 
 .form {
@@ -570,7 +571,7 @@ li, li footer {
     position: relative;
 }
 
-.membership-options h3 {
+.membership-options h3, .wwc h3 {
     padding-top: 15px;
     text-align: left;
 }
@@ -815,6 +816,10 @@ button:hover {
     display: flex;
     justify-content: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.events-container .happy-sad-man {
+    width: 300px;
 }
 
 .event-details {
@@ -1089,6 +1094,25 @@ footer {
     width: auto;
     display: inline-block;
     justify-content: center;
+}
+
+.footer-nav-contents .join-button {
+    display: flex;
+    word-wrap: nowrap;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    padding: 10px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.join-button:hover {
+    background-color: #e7d329;
+    color: black;
 }
 
 .terms-copy {
@@ -1396,7 +1420,7 @@ footer {
         border-radius: 0.5rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: flex-start;
     }
 
@@ -1407,8 +1431,8 @@ footer {
 
     .form {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 5px;
+        grid-template-columns: 1fr 3fr;
+        gap: 10px;
         align-items: center;
         margin-top: 15px;
     }
@@ -1418,11 +1442,12 @@ footer {
         font-weight: 600;
         display: flex;
         align-content: center;
+        padding-right: 15px;
     }
 
     .form input {
         height: 2rem;
-        width: 15rem;
+        width: 20rem;
         border: 0;
         box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 5px 0 rgba(0, 0, 0, 0.19);
         display: flex;
@@ -1520,7 +1545,7 @@ footer {
         align-items: center;
         justify-items: flex-start;
         justify-content: space-between;
-        width: 80%;
+        width: 90%;
         text-wrap: nowrap;
         gap: 15px;
     }
