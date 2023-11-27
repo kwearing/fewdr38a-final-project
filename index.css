@@ -3,7 +3,7 @@ body {
     margin: 0px;
 }
 
-h2, h3, p, li, .button, footer, .join, .table, .table-additional, .scroll-to-top, .membership-options article, .wwc-controls {
+h2, h3, p, li, .button, footer, .join, .table, .table-additional, .scroll-to-top, .membership-options article, .wwc-controls, .slides {
     font-family: 'Roboto', sans-serif;
     text-align: center;
 }
@@ -357,6 +357,48 @@ li, li footer {
     padding: 0px 15px;
 }
 
+.committee-members {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0px 50px;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: center;
+}
+
+.committee-members article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.committee-members article img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+}
+
+.committee-members p {
+    padding: 5px 0px;
+    margin: 0px;
+}
+
+.committee-members .strong {
+    font-weight: 800;
+    padding-top: 10px;
+}
+
+.committee-members .two-images {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+    padding-bottom: 0;
+}
+
 /*NIPPERS ABOUT*/
 .about, .nippers-info {
     margin: 50px 50px;
@@ -469,11 +511,10 @@ li, li footer {
 
 /*TABLE*/
 .table, .table-additional {
-    table-layout: auto;
     margin-bottom: 40px;
     margin-left: 50px;
-    margin-right: 50px;
     width: auto;
+    border-collapse: collapse;
 }
 
 .table th, .table-additional th {
@@ -538,28 +579,31 @@ li, li footer {
     text-align: left;
 }
 
-.form {
+.form fieldset {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 5px;
     align-items: flex-start;
-    margin-top: 15px;
+    margin-top: 5px;
+    padding: 0;
+    border: none;
 }
 
-.form p {
+.form fieldset p {
     text-align: left;
     font-weight: 600;
     display: flex;
     align-content: center;
 }
 
-.form input {
+.form fieldset input {
     height: 2rem;
     width: 15rem;
     border: 0;
     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 5px 0 rgba(0, 0, 0, 0.19);
     display: flex;
     align-items: center;
+    color: rgb(3, 59, 55);
 }
 
 .membership-options {
@@ -579,8 +623,8 @@ li, li footer {
 /*TOOLTIP*/
 .tooltip {
     position: relative;
-    top: 2.25rem;
-    right: 0rem;
+    top: 2rem;
+    right: -0.5rem;
     background: #e7d329;
     padding: 5px 10px;
     font-size: 1rem;
@@ -675,6 +719,7 @@ button {
     margin-top: 20px;
     font-weight: 700;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 button:hover {
@@ -682,88 +727,81 @@ button:hover {
     color: white;
 }
 
-/*MEMBERSHIP POPUP*/
-.membership-mask {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(52, 73, 94, 0.8);
-    z-index: 50;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.7s;
-  }
-  
-  .membership-popup {
-    position: fixed;
-    top: 45%;
-    left: 50%;
-    width: 400px;
-    height: 60px;
-    margin-left: -250px;
-    margin-top: -150px;
-    background: #ffffff;
+/*CAROUSEL*/
+.carousel {
+    --current-slide: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    display: inline;
+}
+
+.slider-button {
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    width: auto;
+    padding: 30px 10px 30px 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
     z-index: 100;
-    visibility: hidden;
-    opacity: inherit;
-    transition: 0s ease-out;
-    transform: translateY(45px);
-    border: 3px solid rgb(3, 59, 55);
-    padding: 25px 65px;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
-    flex-direction: column;
-  }
+}
 
-  .active {
-    visibility: visible;
-    opacity: 1;
-  }
+.button-left {
+    left: 2%;
+}
 
-  .active + .modal {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
-  }
+.button-right {
+    right: 2%;
+}
 
-  .membership-popup p {
-    text-align: center;
-    font-weight: 600;
-    line-height: 1.5rem;
-    padding: 0px 10px 15px 10px;
-  }
-
-  .membership-popup .button {
-    background-color: rgb(3, 59, 55);
+.button-right:hover, .button-left:hover {
+    box-shadow: 0 0 5px #fff;
+    border: 1px solid #fff;
     color: white;
-    font-weight: 400;
-    padding: 10px;
-    width: 60%;
-    text-align: center;
-    justify-content: center;
-  }
+}
 
-/*MAIN EVENTS PAGE*/
-.events-container {
+.slides {
     background-image: url(https://i.imgur.com/WPrt2sg.jpg);
     background-attachment: fixed;
     background-position: top;
     background-size: cover;
-    height: 100vh;
+    height: 150vh;
     display: flex;
     justify-content: center;
     align-content: center;
     position: relative;
+    overflow: hidden;
 }
 
-.events-container article {
-    display: inline-flex;
+.slide {
+    position: absolute;
+    top: 50px;
+    width: 65%;
+    display: flex;
     justify-content: center;
+    z-index: 1;
+    transform: translateX(100%); 
+    transition: transform 0.5s;
+    opacity: 0;
 }
 
-.events-overlay {
+.slide.showing {
+    transform: translateX(0);
+    z-index: 2;
+    opacity: 1;
+}
+
+.slide-content {
     position: absolute;
     top: 20px;
     width: 70%;
@@ -777,156 +815,90 @@ button:hover {
     justify-content: center;
 }
 
-.event-tag {
+.slide-tag {
     background-color: rgb(3, 59, 55);
     color: white;
     display: flex;
     justify-content: flex-start;
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     width: fit-content;
     height: 30px;
     padding: 0 15px;
     align-items: center;
-    box-shadow: 0px 5px 5px #c5c5c5;
+    box-shadow: 0 5px 5px #c5c5c5;
     border-radius: 0 0.5rem 0 0.25rem;
+    text-transform: uppercase;
 }
 
-.events-copy {
+.carousel-item-copy {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.events-copy>h1 {
-    margin: 15px 0px;
+.carousel-item-copy > h1 {
+    margin: 15px 0;
 }
 
-.events-copy>h2 {
+.carousel-item-copy > h2 {
     font-size: 1.05rem;
     padding-bottom: 25px;
 }
 
-.events-container img {
+.slides img {
     width: 150px;
     height: auto;
-    margin: 10px 0px;
+    margin: 10px 0;
     border-radius: 1.25rem;
     display: flex;
     justify-content: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
-.events-container .happy-sad-man {
-    width: 300px;
+.slides .happy-sad-man {
+    width: 90%;
 }
 
-.event-details {
+.carousel-item-details {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0px;
+    gap: 0;
     padding-bottom: 25px;
 }
 
-.events-overlay>h1 {
+.slide > h1 {
     font-size: 1.75rem;
     font-weight: 600;
     margin: 10px;
 }
 
-.events-overlay>h2 {
+.slide > h2 {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.35rem;
     text-transform: none;
-    margin: 0px;
-    padding: 5px 0px 50px 0px;
+    margin: 0;
+    padding: 5px 0 50px 0;
 }
 
-.event-details-copy>h3 {
+.carousel-item-details-copy > h3 {
     font-size: 1.15rem;
     font-weight: 600;
     color: black;
     text-transform: capitalize;
-    margin: 0px;
+    margin: 0;
     padding: 5px;
 }
 
-.event-details-copy>p {
+.carousel-item-details-copy > p {
     line-height: 1.25rem;
 }
 
-/*EVENTS CAROUSEL*/
-.hidden{
-    display: none;
-  }
-
-.visible{
-    display: block;
-  }
-
-.arrow{
-    display: inline;
-  }
-
-.prev, .arrow{
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin: -1.5em .3em 0 .3em;
-    padding: 1em;
-    color: white;
-    font-weight: bold;
-    font-size: 1.2em;
-    transition: 0.3s ease;
-    border-radius: 0.5rem;
-    user-select: none;
-    background-color:rgba(255, 255, 255, 0.3);
-   }
-
-   .prev {
-    left: 25rem;
-   }
-
-   .next {
-     right: 25rem;
-   }
-
-   .prev:hover, .next:hover{
-     box-shadow: 0 0 5px #fff;
-     border:1px solid #fff;
-     color: black;
-   }
-
-   .slide-numbers{
-     text-align: center;
-     position: relative;
-     display: flex;
-     justify-content: center;
-     bottom: 12rem;
-   }
-
-   .dot{
-     cursor: pointer;
-     height: 10px;
-     width: 10px;
-     margin: 0 2px;
-     background-color: rgb(3, 59, 55);
-     border-radius: 50%;
-     display: inline-flex;
-     bottom: 50%;
-   } 
-   
-   .dot:hover, .active{
-     background-color: rgb(255, 255, 255);
-     height: 12px;
-     width: 12px;
-   }
-   .dot:hover{
-      box-shadow: 0 0 5px #000000;
-   }
+.carousel .slides #host-event {
+    width: 100%;
+}
 
 /*MERCHANDISE*/
 .merchandise {
@@ -936,19 +908,19 @@ button:hover {
     justify-content: center;
     justify-items: center;
     margin: 10px 0px;
-}
+    }
 
 .merchandise section {
     border-radius: 10px;
     padding: 25px;
     margin: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
-}
+    }
 
 .merchandise img {
     height: auto;
     width: 90%;
-}
+    }
 
 .merchandise .item-details {
     background-color: #efefef;
@@ -957,15 +929,15 @@ button:hover {
     display: grid;
     grid-template-columns: 1fr 3fr;
     box-shadow: none;
-}
+    }
 
 .item-details p {
     text-align: left;
-}
+    }
 
 .item-details #strong {
     font-weight: 600;
-}
+    }
 
 /*PROMO FOOTER*/
 .promo-footer {
@@ -975,25 +947,25 @@ button:hover {
     height: 250px;
     background-position: center;
     background-size: cover;
-}
+    }
 
 .promo-footer-content {
     height: 150px;
     width: 500px;
     display: inline-block;
     margin-top: 10px;
-}
+    }
 
 .promo-footer-content h2 {
     color: white;
     font-size: 1.5rem;
     padding: 20px 0px;
-}
+    }
 
 /*GLOBAL FOOTER*/
 footer {
     position: relative;
-}
+    }
 
 .sponsors {
     background-color: black;
@@ -1002,7 +974,7 @@ footer {
     align-items: center;
     padding: 20px 0px;
     padding-left: 50px;
-}
+    }
 
 .sponsors h3 {
     color: white;
@@ -1010,7 +982,7 @@ footer {
     font-weight: 400;
     padding-bottom: 10px;
     text-align: left;
-}
+    }
 
 .sponsors img {
     height: 50px;
@@ -1018,7 +990,7 @@ footer {
     display: inline-flex;
     justify-content: center;
     align-content: center;
-}
+    }
 
 .footer-nav-grid {
     display: grid;
@@ -1026,7 +998,7 @@ footer {
     grid-template-columns: 1fr;
     background-color:  black;
     padding-bottom: 20px;
-}
+    }
 
 .footer-nav-grid img {
     display: flex;
@@ -1036,7 +1008,7 @@ footer {
     height: 120px;
     margin-top: 40px;
     margin-bottom: 10px;
-}
+    }
 
 .footer-nav-col {
     display: flex;
@@ -1044,7 +1016,7 @@ footer {
     padding: 0px;
     margin: 0px;
     justify-content: stretch;
-}
+    }
 
 .footer-nav-contents {
     margin: 15px 50px;
@@ -1052,40 +1024,40 @@ footer {
     color: white;
     justify-content: center;
     position: relative;
-}
+    }
 
 .footer-nav-contents h3 {
     font-size: 1.15rem;
     text-align: left;
     text-transform: uppercase;
-}
+    }
 
 .footer-nav-contents p {
     font-size: 0.95rem;
     text-align: left;
-}
+    }
 
 .footer-nav-contents a {
     color: white;
     text-decoration: none;
-}
+    }
 
 .footer-nav-contents .small {
     font-size: 0.85rem;
     line-height: 20px;
     font-weight: 300;
-}
+    }
 
 .footer-nav-contents ul {
     padding: 0px;
     align-items: flex-start;
     text-align: left;
-}
+    }
 
 .footer-nav-contents li {
     text-align: left;
     padding-left: 0px;
-}
+    }
 
 .followus-icons img {
     margin: 0px;
@@ -1094,7 +1066,7 @@ footer {
     width: auto;
     display: inline-block;
     justify-content: center;
-}
+    }
 
 .footer-nav-contents .join-button {
     display: flex;
@@ -1108,12 +1080,12 @@ footer {
     font-weight: 600;
     margin-top: 10px;
     text-transform: uppercase;
-}
+    }
 
 .join-button:hover {
     background-color: #e7d329;
     color: black;
-}
+    }
 
 .terms-copy {
     display: flex;
@@ -1121,7 +1093,7 @@ footer {
     background: black;
     padding-left: 20px;
     color: white;
-}
+    }
 
 .terms-copy p {
     font-size: 0.75rem;
@@ -1129,61 +1101,61 @@ footer {
     text-align: left;
     padding: 0px 25px;
     line-height: 1.5rem;
-}
+    }
 
 .terms-copy a {
     color: white;
-}
+    }
 
 /*ASSETS*/
 .nippers {
     background-image: url(https://i.imgur.com/jikDH8i.jpg);
-}
+    }
 
 .lifesaving {
     background-image: url(https://lsv.com.au/wp-content/uploads/SURF-LIFE-SAVERS-FF897579-2944091.jpg);
-}
+    }
 
 .competitions {
     background-image: url(https://i.imgur.com/r6yi2Ak.jpg);
-}
+    }
 
 
 .surf {
     background: url(https://i.imgur.com/FpJD9ZI.jpg);
-}
+    }
 
 .parental {
     background: url(https://i.imgur.com/rZexHDH.jpg);
-}
+    }
 
 .comps {
     background: url(https://i.imgur.com/jikDH8i.jpg);
-}
+    }
 
 .training {
     background: url(https://i.imgur.com/YHvHuuh.jpg);
-}
+    }
 
 .calendar {
     background: url(https://i.imgur.com/vQ8G4Ak.jpg);
-}
+    }
 
 .patrol {
     background: url(https://i.imgur.com/FpJD9ZI.jpg);
-}
+    }
 
 .awards {
     background: url(https://i.imgur.com/ao5RwLj.jpg);
-}
+    }
 
 .patrol-hours {
     background: url(https://i.imgur.com/vQ8G4Ak.jpg);
-}
+    }
 
 .education {
     background: url(https://i.imgur.com/tm1jZs7.jpg);
-}
+    }
 
 /*DESKTOP SPECS*/
 @media (min-width: 1200px) {
@@ -1295,6 +1267,15 @@ footer {
         vertical-align: top;
     }
 
+    .committee-members {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 0px 180px;
+        justify-content: space-evenly;
+        justify-items: center;
+        align-content: center;
+    }    
+
     .about, .nippers-info {
         margin: 50px 250px;
     }
@@ -1314,6 +1295,25 @@ footer {
         margin-left: 250px;
         margin-right: 350px;
         width: auto;
+    }
+    
+    .table th, .table-additional th {
+        font-weight: 600;
+        font-size: 0.85rem;
+        padding: 10px 15px;
+        border-bottom: 1px solid #efefef;
+        background-color: lightgrey;
+        width: fit-content;
+        text-align: left;
+    }
+    
+    .table td, .table-additional td {
+        font-weight: 200;
+        font-size: 0.85rem;
+        line-height: 18px;
+        padding: 10px 15px;
+        vertical-align: top;
+        text-align: left;
     }
 
     .how-to-join {
@@ -1358,43 +1358,32 @@ footer {
     .guides a:hover {
         color: rgb(25, 153, 144);
     }
-
-    .events-container {
-        background-attachment: fixed;
-        background-position: top;
-        background-size: cover;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        position: relative;
-    }
-
-    .events-overlay {
-        position: absolute;
-        top: 50px;
-        width: 45%;
+    
+    /*EVENTS CAROUSEL*/
+    .slides {
+        height: 110vh;
     }
     
-    .event-details {
+    .slider-button {
+        top: 40%;
+        padding: 50px 30px 50px 30px;
+    }
+    
+    .button-left {
+        left: 20%;
+    }
+    
+    .button-right {
+        right: 20%;
+    }
+    
+    .slides .happy-sad-man {
+        width: 300px;
+    }
+    
+    .carousel-item-details {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 0px;
-        padding-bottom: 25px;
-    }
-
-    .events-copy>h2 {
-        font-size: 1.2rem;
-        padding: 0px 100px 25px 100px;
-    }
-
-    .event-details-copy {
-        border-right: 1px solid #cecece;
-        padding: 0px 20px 0px 20px;
-    }
-    
-    .event-details #cost {
-        border-right: none;
     }
 
     /*JOIN PAGE*/
@@ -1429,15 +1418,17 @@ footer {
         font-size: 1.5rem;
     }
 
-    .form {
+    .form fieldset {
         display: grid;
         grid-template-columns: 1fr 3fr;
         gap: 10px;
         align-items: center;
-        margin-top: 15px;
+        margin-top: 5px;
+        padding: 0;
+        border: none;
     }
 
-    .form p {
+    .form fieldset p {
         text-align: left;
         font-weight: 600;
         display: flex;
@@ -1445,7 +1436,7 @@ footer {
         padding-right: 15px;
     }
 
-    .form input {
+    .form fieldset input {
         height: 2rem;
         width: 20rem;
         border: 0;
