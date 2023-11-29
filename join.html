@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Oswald:wght@200;300;400;500;600;700&family=Roboto:wght@400;500;700&family=Alumni+Sans&family=Antonio:wght@100;200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
     <title>Aspendale Life Saving Club</title>
+    <link rel="icon" type="image/x-icon" href="./Images/favicon.ico">
 </head>
 <body>
     <header class="menu">
@@ -37,10 +38,20 @@
                 <p>Complete the form to register for the next season</p>
 
                 <section class="form">
-                    <p>First Name</p><input type="text">
-                    <p>Last Name</p><input type="text">
-                    <p>Email address</p><input type="text">
-                    <p>Contact number</p><input type="tel">
+                    <form method="GET" action="mailto:kelly.wearing@tal.com.au">
+                        <fieldset>
+                            <label for=""><p>First Name</p></label>
+                            <input type="text" placeholder="Enter your First Name" name="firstname" required></fieldset>
+                        <fieldset>
+                            <label for=""><p>Last Name</p></label>
+                            <input type="text" placeholder="Enter your Last Name" name="lastname" required></fieldset>
+                        <fieldset>
+                            <label><p>Email address</p></label>
+                            <input type="text" placeholder="Your primary email address" name="email" required></fieldset>
+                        <fieldset>
+                            <label for=""><p>Contact number</p></label>
+                            <input type="tel" placeholder="Your primary phone number" name="phonenumber" required></fieldset>
+
                 </section>
 
                 <section class="membership-options">
@@ -51,27 +62,26 @@
                 </section>
 
                 <section class="checkbox">
-                    <input type="checkbox" name="Family" id="family"><p>Family</p>
-                    <input type="checkbox" name="Active family" id="active-family"><p>Active family</p>
-                    <input type="checkbox" name="Individual senior" id="individual-senior"><p>Individual senior</p>
-                    <input type="checkbox" name="Individual youth" id="individual-youth"><p>Individual youth</p>
-                    <input type="checkbox" name="Associate / Social" id="associate-social"><p>Associate / Social</p>
-                    <input type="checkbox" name="Nippers" id="nippers"><p>Nippers</p>
+                    <input type="checkbox" name="Family" id="family"><label for="family"><p>Family</p></label>
+                    <input type="checkbox" name="Active family" id="active-family"><label for="active-family"><p>Active family</p></label>
+                    <input type="checkbox" name="Individual senior" id="individual-senior"><label for="individual-senior"><p>Individual senior</p></label>
+                    <input type="checkbox" name="Individual youth" id="individual-youth"><label for="individual-youth"><p>Individual youth</p></label>
+                    <input type="checkbox" name="Associate / Social" id="associate-social"><label for="associate-social"><p>Associate / Social</p></label>
+                    <input type="checkbox" name="Nippers" id="nippers"><label for="nippers"><p>Nippers</p></label>
                 </section>
 
-                <section class="wwc">
-                    <h3>Do you have a valid Working With Children Check?</h3>
-                    <label class="wwc-controls">Yes
-                        <input type="radio">
-                        <span class="checkmark" id="yes"></span>
-                    </label>
-                    <label class="wwc-controls">No
-                        <input type="radio">
-                        <span class="checkmark" id="no"></span>
-                    </label>
-                </section>
+
+                    <h3>Do you have a valid Working with Children Check?</h3>
+                    <section class="wwc-radio">
+                        <input type="radio" name="myRadio" id="yes" class="radio"><label for="yesradio"><p>Yes</p>
+                        </label>
+                        <input type="radio" name="myRadio" id="no" class="radio"><label for="noradio"><p>No</p>
+                        </label>
+                    </section>
 
                 <button class="submitbtn">Submit</button>
+
+                </form>
             </section>
             </section>
         </section>
@@ -126,31 +136,15 @@
             </section>
         </section>
 
-        <section class="terms-copy">
-            <p>&copy; 2023 Aspendale Life Saving Club | Images courtesy of <a href="https://eugenewashere.com/">EugeneWasHere</a></p>
+        <section class="disclaimer">
+            <article class="disclaimer-copy">
+                <p>&copy; 2023 Aspendale Life Saving Club</p>
+                <p>Images courtesy of <a href="https://eugenewashere.com/">EugeneWasHere</a></p>
+                <p>Website created and sponsored by Kelly Wearing</p>
+            </article>
         </section>
     </footer>
 
-
-    <script>
-
-        const yes = document.querySelector('#yes')
-        const no = document.querySelector('#no')
-
-        const yesRadio = document.querySelector('.checkmark')
-        yesRadio.addEventListener('click', function () {
-            const yes = document.querySelector('#yes')
-            yes.style.backgroundColor = "rgb(3, 59, 55)"
-            no.style.backgroundColor = "white"
-        })
-
-        const noRadio = document.querySelector('.checkmark')
-        noRadio.addEventListener('click', function () {
-            const no = document.querySelector('#no')
-            no.style.backgroundColor = "rgb(3, 59, 55)"
-            yes.style.backgroundColor = "white"
-        })  
-
-    </script>
+   
 </body>
 </html>
