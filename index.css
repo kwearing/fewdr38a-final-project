@@ -3,7 +3,7 @@ body {
     margin: 0px;
 }
 
-h2, h3, p, li, .button, footer, .join, .table, .table-additional, .scroll-to-top, .membership-options article, .wwc-controls, .slides {
+h2, h3, p, li, .button, footer, .join, .table, .table-additional, .scroll-to-top, .membership-options article, .wwc-radio, .slides {
     font-family: 'Roboto', sans-serif;
     text-align: center;
 }
@@ -550,7 +550,7 @@ li, li footer {
     background-attachment: fixed;
     background-position: top;
     background-size: cover;
-    height: 150vh;
+    height: 120vh;
     display: flex;
     justify-content: center;
     align-content: flex-start;
@@ -579,12 +579,17 @@ li, li footer {
     text-align: left;
 }
 
+.form {
+    width: fit-content;
+}
+
 .form fieldset {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
-    align-items: flex-start;
+    align-items: center;
     margin-top: 5px;
+    margin-right: 5px;
     padding: 0;
     border: none;
 }
@@ -606,6 +611,10 @@ li, li footer {
     color: rgb(3, 59, 55);
 }
 
+input[type="text"], input[type="tel"] {
+    padding: 0px 5px 0px 10px;
+}
+
 .membership-options {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -615,7 +624,7 @@ li, li footer {
     position: relative;
 }
 
-.membership-options h3, .wwc h3 {
+.membership-options h3, .join-container h3 {
     padding-top: 15px;
     text-align: left;
 }
@@ -691,7 +700,7 @@ li, li footer {
     animation: shake 500ms ease-in-out forwards;
   }
 
-/*CHECKBOX*/
+/*MEMBERSHIP OPTIONS*/
 .checkbox {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 2fr;
@@ -708,6 +717,29 @@ li, li footer {
     width: 1rem;
     height: 1rem;
     accent-color: #e7d329;
+}
+
+/*WWC AND SUBMIT BUTTON*/
+.wwc-radio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+input[type="radio"] {
+    cursor: pointer;
+    margin-bottom: 12px;
+    width: 1.5rem;
+    height: 1.5rem;
+    accent-color: rgb(3, 59, 55);
+}
+
+input[type="radio"]::after {
+    accent-color: rgb(3, 59, 55);
+}
+
+.wwc-radio label[for="yesradio"] {
+    padding-right: 25px;
 }
 
 button {
@@ -1087,23 +1119,29 @@ footer {
     color: black;
     }
 
-.terms-copy {
+.disclaimer {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    background: black;
+    padding: 0px;
+}
+
+.disclaimer-copy {
+    display: inline;
+    background-color: black;
     padding-left: 20px;
     color: white;
     }
 
-.terms-copy p {
+.disclaimer-copy p {
     font-size: 0.75rem;
     color: white;
     text-align: left;
-    padding: 0px 25px;
-    line-height: 1.5rem;
+    padding: 0px 0px 0 25px;
+    line-height: 1rem;
     }
 
-.terms-copy a {
+.disclaimer-copy a {
     color: white;
     }
 
@@ -1392,7 +1430,7 @@ footer {
         background-attachment: fixed;
         background-position: top;
         background-size: cover;
-        height: 100vh;
+        height: 150vh;
         display: flex;
         justify-content: center;
         align-content: center;
@@ -1531,7 +1569,7 @@ footer {
     /*CHECKBOX*/
     .checkbox {
         display: grid;
-        grid-template-columns: 1fr 3fr 1fr 3fr 1fr 3fr;
+        grid-template-columns: 5% 28% 5% 28% 5% 28%;
         flex-direction: column;
         align-items: center;
         justify-items: flex-start;
@@ -1547,6 +1585,26 @@ footer {
         accent-color: #e7d329;
     }
 
+    /*WWC RADIO BUTTONS*/
+    .wwc-radio {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    input[type="radio"] {
+        cursor: pointer;
+        margin-bottom: 12px;
+        accent-color: rgb(3, 59, 55);
+        transition: 0.2s all linear;
+    }
+
+    .wwc-radio label[for="yesradio"] {
+        padding-right: 25px;
+    }
+
+    /*SUBMIT BUTTON*/
+
     button {
         width: 7.5rem;
         height: 2.5rem;
@@ -1561,68 +1619,6 @@ footer {
     button:hover {
         background-color: rgb(3, 59, 55);
         color: white;
-    }
-
-    /*WWC*/
-    .wwc-controls {
-        display: block;
-        position: relative;
-        cursor: pointer;
-        padding: 10px 0px 5px 35px;
-        margin-bottom: 12px;
-        user-select: none;
-        font-size: 0.85rem;
-        text-align: left;
-    }
-
-    .wwc-controls input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-    }
-
-    .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 25px;
-        width: 25px;
-        margin: 5px 0px;
-        background-color: #efefef;
-        border-radius: 50%;
-        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 5px 0 
-    }
-
-    /* On mouse-over, add a grey background color */
-    .wwc-controls:hover .checkmark {
-        background-color: #ccc;
-    }
-    
-    /* When the radio button is checked, add a blue background */
-    .wwc-controls input:checked ~ .checkmark {
-        background-color: rgb(3, 59, 55);
-    }
-    
-    /* Create the indicator (the dot/circle - hidden when not checked) */
-    .checkmark:after {
-        content: "";
-        position: absolute;
-        display: none;
-    }
-    
-    /* Show the indicator (dot/circle) when checked */
-    .wwc-controls input:checked ~ .checkmark:after {
-        display: block;
-    }
-    
-    /* Style the indicator (dot/circle) */
-    .wwc-controls .checkmark:after {
-        top: 9px;
-        left: 9px;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: white;
     }
 
     /*MERCHANDISE*/
@@ -1698,22 +1694,23 @@ footer {
         align-content: center;
     }
 
-    .terms-copy {
+    .disclaimer-copy {
         background: black;
-        padding: 0px;
         display: flex;
         padding-left: 20px;
+        padding-right: 5px;
         width: auto;
+        justify-content:center;
     }
     
-    .terms p {
+    .disclaimer p {
         font-size: 0.75rem;
         color: white;
         text-align: left;
         padding: 0px 25px;
     }
     
-    .terms a {
+    .disclaimer a {
         color: white;
     }
 }
