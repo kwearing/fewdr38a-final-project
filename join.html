@@ -7,8 +7,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Oswald:wght@200;300;400;500;600;700&family=Roboto:wght@400;500;700&family=Alumni+Sans&family=Antonio:wght@100;200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
-    <title>Aspendale Life Saving Club</title>
+    <script defer src="./script.js"></script>
     <link rel="icon" type="image/x-icon" href="./Images/favicon.ico">
+    <title>Aspendale Life Saving Club</title>
+    
 </head>
 <body>
     <header class="menu">
@@ -21,7 +23,7 @@
                 <li><a href="./competition.html">Competition</a></li>
                 <li><a href="./membership.html">Membership</a></li>
                 <li><a href="./events.html">Events</a></li>
-                <li><a href="./membership.html" class="join-button">Join ALSC</a></li>
+                <li><a href="./join.html" class="join-button">Join ALSC</a></li>
             </ul>
         </nav>
     </header>
@@ -36,9 +38,8 @@
             <section class="overlay">
                 <h2>Join Aspendale Life Saving Club</h2>
                 <p>Complete the form to register for the next season</p>
-
-                <section class="form">
-                    <form method="GET" action="mailto:kelly.wearing@tal.com.au">
+                <form method="GET">
+                    <section class="form">
                         <fieldset>
                             <label for=""><p>First Name</p></label>
                             <input type="text" placeholder="Enter your First Name" name="firstname" required></fieldset>
@@ -47,46 +48,68 @@
                             <input type="text" placeholder="Enter your Last Name" name="lastname" required></fieldset>
                         <fieldset>
                             <label><p>Email address</p></label>
-                            <input type="text" placeholder="Your primary email address" name="email" required></fieldset>
+                            <input type="email" placeholder="Your primary email address" name="email" required></fieldset>
                         <fieldset>
                             <label for=""><p>Contact number</p></label>
                             <input type="tel" placeholder="Your primary phone number" name="phonenumber" required></fieldset>
-
-                </section>
-
-                <section class="membership-options">
-                    <h3>Please select the membership you're interested in:</h3>
-                    <article id="anim">
-                        <span class="tooltip" data-tooltip="Unsure which membership to choose? Check out the Membership page">?</span>
-                    </article>
-                </section>
-
-                <section class="checkbox">
-                    <input type="checkbox" name="Family" id="family"><label for="family"><p>Family</p></label>
-                    <input type="checkbox" name="Active family" id="active-family"><label for="active-family"><p>Active family</p></label>
-                    <input type="checkbox" name="Individual senior" id="individual-senior"><label for="individual-senior"><p>Individual senior</p></label>
-                    <input type="checkbox" name="Individual youth" id="individual-youth"><label for="individual-youth"><p>Individual youth</p></label>
-                    <input type="checkbox" name="Associate / Social" id="associate-social"><label for="associate-social"><p>Associate / Social</p></label>
-                    <input type="checkbox" name="Nippers" id="nippers"><label for="nippers"><p>Nippers</p></label>
-                </section>
-
-
-                    <h3>Do you have a valid Working with Children Check?</h3>
-                    <section class="wwc-radio">
-                        <input type="radio" name="myRadio" id="yes" class="radio"><label for="yesradio"><p>Yes</p>
-                        </label>
-                        <input type="radio" name="myRadio" id="no" class="radio"><label for="noradio"><p>No</p>
-                        </label>
                     </section>
 
-                <button class="submitbtn">Submit</button>
+                    <section class="membership">
+                        <section class="membership-options">
+                            <h3>Please select the membership you're interested in:</h3>
+                            <article id="anim">
+                                <span class="tooltip" data-tooltip="Check out the Membership page for details">?</span>
+                            </article>
+                        </section>
 
+                        <section class="checkbox">
+                            <input type="checkbox" name="Family" id="family"><label for="family"><p>Family</p></label>
+                            <input type="checkbox" name="Active family" id="active-family"><label for="active-family"><p>Active family</p></label>
+                            <input type="checkbox" name="Individual senior" id="individual-senior"><label for="individual-senior"><p>Individual senior</p></label>
+                            <input type="checkbox" name="Individual youth" id="individual-youth"><label for="individual-youth"><p>Individual youth</p></label>
+                            <input type="checkbox" name="Associate / Social" id="associate-social"><label for="associate-social"><p>Associate / Social</p></label>
+                            <input type="checkbox" name="Nippers" id="nippers"><label for="nippers"><p>Nippers</p></label>
+                        </section>
+
+                        <section class="wwc-check">
+                            <h3>Working with Children Check (WWCC)</h3>
+                            <section class="checkbox">
+                                <input type="checkbox" name="wwc" id="wwc"><label for="wwc"><p>I confirm I have a valid WWCC</p></label>
+                            </section>
+                        </section>
+                    </section>
+
+                    <button class="submitbtn">Submit</button>
                 </form>
             </section>
+        </section>
+
+        <section class="modal-container">
+            <section class="modal-copy">
+                <h2>BEFORE YOU JOIN ...</h2>
+                <p>To be a member of the Aspendale Life Saving Club, it is essential that you possess a valid Working with Children Check (WWCC). If you don't have one, you can obtain one easily online.</p>
+
+                <button class="modal-button" id="yes-wwc">
+                    <p><a href="#">I have a WWCC</a></p>
+                </button>
+                <button class="modal-button" id="no-wwc">
+                    <p><a href="https://www.service.vic.gov.au/find-services/work-and-volunteering/working-with-children-check" target="_blank">I don't have a WWCC</a></p>
+                </button>
             </section>
         </section>
     </main>
 
+    <section class="submit-modal-container" id="submit-modal-container">
+        <section class="submit-modal-copy">
+            <h2>THANK YOU</h2>
+            <p>Thank you for taking the time to register. We will contact you shortly. Please have your WWCC number ready.</p>
+
+            <button class="submit-modal-button" id="submit-modal-button">
+                <p>Close</p>
+            </button>
+        </section>
+    </section>
+    
     <footer>
         <section class="sponsors">
             <article class="sponsors-logos">
@@ -144,7 +167,5 @@
             </article>
         </section>
     </footer>
-
-   
 </body>
 </html>
