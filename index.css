@@ -3,7 +3,7 @@ body {
     margin: 0px;
 }
 
-h2, h3, p, li, .button, footer, .join, .table, .table-additional, .scroll-to-top, .membership-options article, .wwc-radio, .slides {
+h2, h3, p, li, .button, footer, .join, .table, .table-additional, .scroll-to-top, .membership-options article, .slides {
     font-family: 'Roboto', sans-serif;
     text-align: center;
 }
@@ -49,16 +49,99 @@ a:hover {
     padding-left: 50px;
 }
 
+
+@keyframes pulse {
+    from {
+        transform: scale3d(1, 1, 1);
+      }
+    
+      50% {
+        transform: scale3d(1.05, 1.05, 1.05);
+      }
+    
+      to {
+        transform: scale3d(1, 1, 1);
+      }
+    }
+
+@keyframes slideinright {
+    from {
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+      }
+    
+      to {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+@keyframes bounce {
+    from,
+    20%,
+    53%,
+    to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+    }
+
+    40%,
+    43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0) scaleY(1.1);
+    }
+
+    70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -5px, 0) scaleY(1.05);
+    }
+
+    80% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0) scaleY(0.95);
+    }
+
+    90% {
+    transform: translate3d(0, -4px, 0) scaleY(1.02);
+    }
+}
+
+@keyframes flipInX {
+    from {
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        animation-timing-function: ease-in;
+        opacity: 0;
+      }
+    
+      40% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        animation-timing-function: ease-in;
+      }
+    
+      60% {
+        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        opacity: 1;
+      }
+    
+      80% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+      }
+    
+      to {
+        transform: perspective(400px);
+      }
+    }
+
 /*MENU AND NAVIGATION*/
 .menu {
     text-align: center;
     display: flex;
-    align-items: center;
-    background-color: white;
-    padding: 10px 0px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px 0px;
+    margin: auto;
 }
 
 .logo {
@@ -66,18 +149,24 @@ a:hover {
     width: auto;
     border: 1px solid white;
     border-radius: 1.25rem;
+    padding: 0px 20px;
 }
 
 .navigation {
     display: inline-block;
     list-style-type: none;
-    padding-right: 10px;
+    padding-right: 0px;
     padding-bottom: 10px;
+}
+
+.navigation ul {
+    padding-left: 0px
 }
 
 .navigation li {
     font-weight: 800;
     line-height: 1.5rem;
+    padding: 0px 10px;
 }
 
 .join-button {
@@ -109,6 +198,7 @@ li, li footer {
     font-size: 0.85rem;
     border-radius: 0.25rem;
     background-color: #e7d329;
+    box-shadow: 0 1rem 2.5rem -0.75rem rgba(51,63,72,.22);
     padding: 15px 35px;
     color: black;
     margin: 0px 0;
@@ -129,6 +219,7 @@ li, li footer {
     font-size: 0.85rem;
     border-radius: 0.25rem;
     background-color: rgb(3, 59, 55);
+    box-shadow: 0 1rem 2.5rem -0.75rem rgba(51,63,72,.22);
     padding: 10px 35px;
     color: white;
     display: inline-block;
@@ -139,6 +230,7 @@ li, li footer {
 
 .readmore:hover {
     background-color: #e7d329;
+    box-shadow: 0 1rem 2.5rem -0.75rem rgba(51,63,72,.22);
     color: black;
     font-weight: 600;
 }
@@ -253,7 +345,8 @@ li, li footer {
     width: 80%;
     height: 50%;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px 0px;
+    box-shadow: 0 1rem 2.5rem -0.75rem rgba(51,63,72,.22);
+    padding: 10px 15px;
     border-radius: 0.25rem;
     display: flex;
     flex-direction: column;
@@ -299,7 +392,7 @@ li, li footer {
     color: black;
     font-weight: 400;
     background-position: top;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 1rem 2.5rem -0.75rem rgba(51,63,72,.22);
 }
 
 .nippers-content, .lifesaving-content, .competitions-content {
@@ -336,6 +429,7 @@ li, li footer {
     color: black;
     font-weight: 400;
     background-position: top;
+    box-shadow: 0 1rem 2.5rem -0.75rem rgba(51,63,72,.22);
 }
 
 .about-us-content {
@@ -471,6 +565,7 @@ li, li footer {
     border-radius: 10rem;
     background-size: cover;
     background-position: center;
+    box-shadow: 0 1rem 2.5rem -0.75rem rgba(51,63,72,.22);
 }
 
 .lifesaving-schedule {
@@ -489,21 +584,26 @@ li, li footer {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: 0px;
-    background-color: #efefef;
-    padding: 10px 0px 5px 40px;
-    border-top: 15px solid black;
-    border-bottom: 15px solid black;
+    margin: 15px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 1rem 2.5rem -0.75rem rgba(51,63,72,.22);
+    padding: 10px 0px 15px 40px;
     gap: 5px;
 }
 
-.guides h3, .guides p {
+.guides i {
+    padding-right: 5px;
+    color: #c20000;
+}
+
+.guides h2{
+    font-size: 1.5rem;
     text-align: left;
     padding-left: 10px;
     margin: 5px 0 5px 0;
 }
 
-.guides h2 {
+.guides h3, .guides p {
     text-align: left;
     padding-left: 10px;
     margin: 5px 0 5px 0;
@@ -551,6 +651,7 @@ li, li footer {
     background-position: top;
     background-size: cover;
     height: 120vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-content: flex-start;
@@ -581,11 +682,12 @@ li, li footer {
 
 .form {
     width: fit-content;
+    z-index: 4;
 }
 
 .form fieldset {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 20% 80%;
     gap: 5px;
     align-items: center;
     margin-top: 5px;
@@ -611,21 +713,39 @@ li, li footer {
     color: rgb(3, 59, 55);
 }
 
-input[type="text"], input[type="tel"] {
+input[type="text"], input[type="email"], input[type="tel"] {
     padding: 0px 5px 0px 10px;
 }
 
+.form fieldset input:focus-within {
+    background: rgba(3, 59, 55, 0.15);
+    outline: none;
+}
+
+.membership {
+    position: relative;
+    width: 100vw;
+    height: fit-content;
+    padding: 25px 15px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0px;
+}
+
 .membership-options {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    justify-content: space-between;
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
     justify-items: flex-start;
     text-wrap: wrap;
     position: relative;
 }
 
-.membership-options h3, .join-container h3 {
+.membership h3, .membership-options h3, .join-container h3 {
     padding-top: 15px;
+    padding-right: 10px;
     text-align: left;
 }
 
@@ -633,7 +753,7 @@ input[type="text"], input[type="tel"] {
 .tooltip {
     position: relative;
     top: 2rem;
-    right: -0.5rem;
+    right: 3rem;
     background: #e7d329;
     padding: 5px 10px;
     font-size: 1rem;
@@ -660,24 +780,25 @@ input[type="text"], input[type="tel"] {
 }
   
 .tooltip:after {
+    position: absolute;
     content: attr(data-tooltip);
     background: #e7d329;
-    width: 160px;
+    width: 200px;
     height: fit-content;
     font-size: 13px;
     font-weight: 300;
-    top: -100px;
-    right: 10px;
+    top: -50px;
+    right: 20px;
     padding: 10px;
     border-radius: 5px;
     letter-spacing: 1px;
-    transform: translateY(20px);
+    transform: translateY(5px);
 }
   
 .tooltip:hover::before,
 .tooltip:hover::after {
     opacity: 1;
-    transform: translateY(-2px);
+    transform: translateY(-5px);
 }
   
 @keyframes shake {
@@ -701,16 +822,25 @@ input[type="text"], input[type="tel"] {
   }
 
 /*MEMBERSHIP OPTIONS*/
+.wwc-check {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-items: flex-start;
+
+}
+
 .checkbox {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 2fr;
+    grid-template-columns: 5% 95%;
     flex-direction: column;
     align-items: center;
     justify-items: flex-start;
-    justify-content: space-between;
-    width: 80%;
-    text-wrap: nowrap;
-    gap: 10px;
+    justify-content: flex-start;
+    min-width: 600px;
+    width: 100vw;
+    text-wrap: wrap;
+    gap: 5px;
 }
 
 .checkbox input {
@@ -719,30 +849,61 @@ input[type="text"], input[type="tel"] {
     accent-color: #e7d329;
 }
 
-/*WWC AND SUBMIT BUTTON*/
-.wwc-radio {
+/*MODAL CONTAINER*/
+.modal-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.95);
+    pointer-events: none;
 }
 
-input[type="radio"] {
+.modal-copy {
+    background-color: white;
+    max-width: 80%;
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+    margin: auto;
+    animation: flipInX 1s ease-in-out;
+}
+
+.modal-button {
+    display: inline-block;
+    justify-items: center;
+    align-content: center;
+    width: 12rem;
+    border-radius: 5px;
+    background-color: #e7d329;
+    border: 0px;
+    font-weight: 700;
+    text-transform: uppercase;
     cursor: pointer;
-    margin-bottom: 12px;
-    width: 1.5rem;
-    height: 1.5rem;
-    accent-color: rgb(3, 59, 55);
+    margin: 5px 30px;
+    pointer-events: auto;
 }
 
-input[type="radio"]::after {
-    accent-color: rgb(3, 59, 55);
+.modal-container #yes-wwc:hover {
+    background-color: rgb(3, 59, 55);
 }
 
-.wwc-radio label[for="yesradio"] {
-    padding-right: 25px;
+.modal-container #yes-wwc:hover a {
+    color: white;
 }
 
-button {
+.modal-container #no-wwc {
+    background-color: lightgray;
+}
+
+/*SUMIT BUTTON*/
+.submitbtn {
     width: 7.5rem;
     height: 2.5rem;
     border-radius: 5px;
@@ -754,9 +915,57 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.submitbtn:hover {
     background-color: rgb(3, 59, 55);
     color: white;
+}
+
+/*SUBMIT MODAL CONTAINER*/
+.submit-modal-container {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.85);
+    pointer-events: none;
+    z-index: 1000;
+    overflow: auto;
+}
+
+.submit-modal-copy {
+    background-color: rgb(3, 59, 55);
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 5px 0 rgba(0, 0, 0, 0.19);
+    max-width: 70%;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+    margin: 15% auto;
+}
+
+.submit-modal-copy h2 {
+    color: lightgray;
+}
+
+.submit-modal-button {
+    display: inline-block;
+    justify-items: center;
+    align-content: flex-start;
+    width: auto;
+    border-radius: 5px;
+    background-color: white;
+    border: 0px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 5px 30px;
+    pointer-events: auto;
+    padding: 0px 15px;
 }
 
 /*CAROUSEL*/
@@ -770,7 +979,7 @@ button:hover {
     display: inline;
 }
 
-.slider-button {
+.slider button {
     cursor: pointer;
     position: absolute;
     top: 60%;
@@ -780,6 +989,7 @@ button:hover {
     font-weight: bold;
     font-size: 1.2rem;
     transition: 0.3s ease;
+    border: none;
     border-radius: 0.5rem;
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 100;
@@ -788,18 +998,19 @@ button:hover {
     align-items: center;
 }
 
-.button-left {
+.slider .button-left {
     left: 2%;
 }
 
-.button-right {
+.slider .button-right {
     right: 2%;
 }
 
-.button-right:hover, .button-left:hover {
+.slider .button-right:hover, .button-left:hover {
     box-shadow: 0 0 5px #fff;
     border: 1px solid #fff;
     color: white;
+    background-color: #e7d329;
 }
 
 .slides {
@@ -1050,6 +1261,10 @@ footer {
     justify-content: stretch;
     }
 
+.footer-nav-col .logo {
+    padding: 0px;
+}
+
 .footer-nav-contents {
     margin: 15px 50px;
     display: inline-block;
@@ -1197,31 +1412,6 @@ footer {
 
 /*DESKTOP SPECS*/
 @media (min-width: 1200px) {
-
-    .nippers-content, .lifesaving-content, .competitions-content {
-        padding: 0 10px 15px 10px;
-    }
-
-    .promo-text {
-        position: relative;
-        top: 20px;
-        width: 100%;
-        height: 50%;
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 0 10px 15px 10px;
-    }
-
-    .promo-text>h1 {
-        font-size: 2rem;
-        margin: 10px;
-    }
-    
-    .promo-text>h2 {
-        font-size: 1.15rem;
-        padding: 5px;
-        margin: 0px;
-    }
-
     .promo-heading-home, .promo-heading-nippers, .promo-heading-membership, .promo-heading-aboutus, .promo-heading-competition, .promo-heading-lifesaving, .promo-heading-events, .promo-heading-merchandise {
         justify-content: center;
         align-items: center;
@@ -1230,17 +1420,32 @@ footer {
     }
 
     .promo-text {
+        position: relative;
+        top: 20px;
         width: 35%;
         height: auto;
         background-color: rgba(255, 255, 255, 0.8);
         padding: 40px;
         border-radius: 0.5rem;
         position: relative;
-        top: 0px;
     }
 
     .promo-text>h1 {
-        margin-top: 0px;
+        font-size: 2rem;
+        margin: 10px;
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+    }
+    
+    .promo-text>h2 {
+        font-size: 1.15rem;
+        padding: 5px;
+        margin: 0px;
+    }
+
+    .nippers-content, .lifesaving-content, .competitions-content {
+        padding: 0 10px 15px 10px;
     }
 
     .fees>h3 {
@@ -1321,8 +1526,18 @@ footer {
     .nippers-info-tiles {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        gap: 5px;
+        justify-items: flex-start;
+        align-items: start;
         margin: 0px 250px;
+        gap: 5px;
+    }
+
+    .nippers-info-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        justify-items: center;
+        align-items: center;
     }
 
     .lifesaving-schedule {
@@ -1362,22 +1577,32 @@ footer {
     .guides {
         display: block;
         position: absolute;
-        top: 50px;
-        right: 0px;
+        top: 170px;
+        right: 30px;
         z-index: 500;
-        margin: 0 30px;
-        background-color: rgb(3, 59, 55);
+        margin: 0 0px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 1rem 2.5rem -0.75rem rgba(51,63,72,.22);
         padding: 10px;
-        border-top: 15px solid black;
-        border-bottom: 15px solid black;
+        border-top: 15px none;
+        border-bottom: 10px solid black;
         border-radius: 0.25rem;
     }
 
+    .guides i {
+        padding-right: 5px;
+        color: #c20000;
+    }
+
     .guides>h2 {
+        font-size: 1.15rem;
         text-align: left;
-        padding: 5px 5px 0px 5px;
+        padding: 10px 5px 10px 5px;
         margin: 5px 0 5px 0;
         color: white;
+        background-color: rgb(3, 59, 55);
+        border-radius: 5px;
+        text-transform: uppercase;
     }
 
     .guides h3, .guides p {
@@ -1386,11 +1611,11 @@ footer {
     }
 
     .guides h3 { 
-        color: #e7d329;
+        color: rgb(25, 153, 144);
     }
 
     .guides a {
-        color: lightgrey;
+        color: rgb(31, 31, 31);
     }
 
     .guides a:hover {
@@ -1402,16 +1627,16 @@ footer {
         height: 110vh;
     }
     
-    .slider-button {
+    .slider button {
         top: 40%;
         padding: 50px 30px 50px 30px;
     }
     
-    .button-left {
+    .slider .button-left {
         left: 20%;
     }
     
-    .button-right {
+    .slider .button-right {
         right: 20%;
     }
     
@@ -1430,7 +1655,8 @@ footer {
         background-attachment: fixed;
         background-position: top;
         background-size: cover;
-        height: 150vh;
+        height: 120vh;
+        width: auto;
         display: flex;
         justify-content: center;
         align-content: center;
@@ -1440,7 +1666,7 @@ footer {
     .overlay {
         position: absolute;
         top: 50px;
-        width: auto;
+        max-width: 500px;
         height: fit-content;
         background-color: rgba(255, 255, 255, 0.95);
         padding: 35px 80px;
@@ -1449,6 +1675,7 @@ footer {
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+        margin: auto;
     }
 
     .overlay h2 {
@@ -1485,9 +1712,9 @@ footer {
 
     .membership-options {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         justify-items: center;
-        text-wrap: nowrap;
+        text-wrap: wrap;
         position: relative;
     }
 
@@ -1526,18 +1753,20 @@ footer {
     }
     
     .tooltip:after {
+        position: absolute;
         content: attr(data-tooltip);
         background: #e7d329;
-        width: 160px;
+        width: 300px;
         height: fit-content;
         font-size: 13px;
         font-weight: 300;
-        top: -100px;
-        right: -10px;
+        top: -40px;
+        right: -5px;
         padding: 10px;
         border-radius: 5px;
         letter-spacing: 1px;
-        transform: translateY(20px);
+        transform: translateY(0px);
+        z-index: 10;
     }
     
     .tooltip:hover::before,
@@ -1568,15 +1797,16 @@ footer {
 
     /*CHECKBOX*/
     .checkbox {
+        width: 500px;
         display: grid;
-        grid-template-columns: 5% 28% 5% 28% 5% 28%;
+        grid-template-columns: 5% 20% 5% 20% 5% 44%;
         flex-direction: column;
         align-items: center;
         justify-items: flex-start;
         justify-content: space-between;
-        width: 90%;
         text-wrap: nowrap;
         gap: 15px;
+        overflow: hidden;
     }
 
     .checkbox input {
@@ -1585,27 +1815,15 @@ footer {
         accent-color: #e7d329;
     }
 
-    /*WWC RADIO BUTTONS*/
-    .wwc-radio {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-    }
-
-    input[type="radio"] {
-        cursor: pointer;
-        margin-bottom: 12px;
-        accent-color: rgb(3, 59, 55);
-        transition: 0.2s all linear;
-    }
-
-    .wwc-radio label[for="yesradio"] {
-        padding-right: 25px;
+    /*MODAL CONTAINER*/
+    .modal-copy {
+        width: 500px;
+        max-width: 100%;
+        padding: 30px 20px;
     }
 
     /*SUBMIT BUTTON*/
-
-    button {
+    .submitbtn {
         width: 7.5rem;
         height: 2.5rem;
         border-radius: 5px;
@@ -1616,9 +1834,14 @@ footer {
         text-transform: uppercase;
     }
 
-    button:hover {
+    .submitbtn:hover {
         background-color: rgb(3, 59, 55);
         color: white;
+    }
+
+    /*SUBMIT MODAL CONTAINER*/
+    .submit-modal-copy {
+        max-width: 30%;
     }
 
     /*MERCHANDISE*/
