@@ -997,7 +997,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
 
 .carousel-inner {
     width: 95%;
-    min-height: 70vh;
+    min-height: 85vh;
     justify-content: center;
     margin: 0px;
     position: relative;
@@ -1013,6 +1013,11 @@ input[type="text"], input[type="email"], input[type="tel"] {
 
 #club2club-logo, #alsc-logo {
     width: 150px!important;
+    height: auto;
+}
+
+#happy-sad-man {
+    width: 300px!important;
     height: auto;
 }
 
@@ -1063,7 +1068,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
 }
 
 .carousel-item-details-copy > p {
-    line-height: 1.25rem;
+    line-height: 1.15rem;
 }
 
 .carousel-control-prev, .carousel-control-next {
@@ -1591,7 +1596,7 @@ footer {
 
     .carousel-inner {
         width: 90%;
-        min-height: 80vh;
+        min-height: 85vh;
         justify-content: center;
         margin: 0px;
         position: relative;
@@ -1607,6 +1612,11 @@ footer {
 
     #club2club-logo, #alsc-logo {
         width: 150px!important;
+        height: auto;
+    }
+
+    #happy-sad-man {
+        width: 400px!important;
         height: auto;
     }
 
