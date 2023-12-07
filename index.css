@@ -273,9 +273,9 @@ li, li footer {
 }
 
 .promo-heading-aboutus {
-    background-image: url(https://i.imgur.com/8D6Dqqy.jpg);
+    background-image: url(./Images/about-us.jpg);
     background-position: center;
-    height: 300px;
+    min-height: 300px;
     justify-content: center;
     align-content: center;
     background-size: cover;
@@ -283,9 +283,9 @@ li, li footer {
 }
 
 .promo-heading-nippers {
-    background-image: url(https://i.imgur.com/CMdckzO.jpg);
+    background-image: url(./Images/nippers.jpg);
     background-position: center;
-    height: 300px;
+    min-height: 300px;
     justify-content: center;
     align-content: center;
     background-size: cover;
@@ -293,9 +293,9 @@ li, li footer {
 }
 
 .promo-heading-lifesaving {
-    background-image: url(https://i.imgur.com/GmNkJGd.jpg);
+    background-image: url(./Images/lifesaving.jpg);
     background-position: bottom;
-    height: 300px;
+    min-height: 300px;
     justify-content: center;
     align-content: center;
     background-size: cover;
@@ -303,9 +303,9 @@ li, li footer {
 }
 
 .promo-heading-competition {
-    background-image: url(https://i.imgur.com/zKyYvBz.jpg);
+    background-image: url(./Images/competition.jpg);
     background-position: center;
-    height: 300px;
+    min-height: 300px;
     justify-content: center;
     align-content: center;
     background-size: cover;
@@ -313,9 +313,9 @@ li, li footer {
 }
 
 .promo-heading-membership {
-    background-image: url(https://i.imgur.com/9jia4NU.jpg);
+    background-image: url(./Images/membership.jpg);
     background-position: top;
-    height: 300px;
+    min-height: 300px;
     justify-content: center;
     align-content: center;
     background-size: cover;
@@ -323,9 +323,9 @@ li, li footer {
 }
 
 .promo-heading-merchandise {
-    background-image: url(https://i.imgur.com/yS2XMUL.jpg);
+    background-image: url(./Images/merchandise.jpg);
     background-position: top;
-    height: 300px;
+    min-height: 300px;
     justify-content: center;
     align-content: center;
     background-size: cover;
@@ -337,8 +337,8 @@ li, li footer {
     position: relative;
     top: 60px;
     width: 80%;
-    height: 50%;
-    padding: 0px 10px;
+    height: fit-content;
+    padding: 20px 10px;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 1rem 2.5rem -0.75rem rgba(51,63,72,.22);
     border-radius: 0.5rem;
