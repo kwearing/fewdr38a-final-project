@@ -3,7 +3,7 @@ body {
     margin: 0px;
 }
 
-h2, h3, p, li, .button, footer, .join, .table, .table-additional, .scroll-to-top, .membership-options article, .slides {
+h2, h3, p, li, .button, footer, .join, .table, .table-additional, .scroll-to-top, .membership-options article, .slides, .carousel-item, .carousel-item-details-copy {
     font-family: 'Roboto', sans-serif;
     text-align: center;
 }
@@ -32,7 +32,7 @@ h2 {
 
 p, li {
     font-size: 0.9rem;
-    line-height: 18px;
+    line-height: 1.25rem;
 }
 
 a {
@@ -276,7 +276,7 @@ li, li footer {
     background-image: url(https://i.imgur.com/8D6Dqqy.jpg);
     background-attachment: fixed;
     background-position: center;
-    height: 350px;
+    height: 450px;
     justify-content: center;
     align-content: center;
     background-size: cover;
@@ -287,7 +287,7 @@ li, li footer {
     background-image: url(https://i.imgur.com/CMdckzO.jpg);
     background-attachment: fixed;
     background-position: center;
-    height: 350px;
+    height: 450px;
     justify-content: center;
     align-content: center;
     background-size: cover;
@@ -298,7 +298,7 @@ li, li footer {
     background-image: url(https://i.imgur.com/GmNkJGd.jpg);
     background-attachment: fixed;
     background-position: bottom;
-    height: 350px;
+    height: 450px;
     justify-content: center;
     align-content: center;
     background-size: cover;
@@ -309,7 +309,7 @@ li, li footer {
     background-image: url(https://i.imgur.com/zKyYvBz.jpg);
     background-attachment: fixed;
     background-position: center;
-    height: 350px;
+    height: 450px;
     justify-content: center;
     align-content: center;
     background-size: cover;
@@ -320,7 +320,7 @@ li, li footer {
     background-image: url(https://i.imgur.com/9jia4NU.jpg);
     background-attachment: fixed;
     background-position: top;
-    height: 350px;
+    height: 450px;
     justify-content: center;
     align-content: center;
     background-size: cover;
@@ -331,7 +331,7 @@ li, li footer {
     background-image: url(https://i.imgur.com/yS2XMUL.jpg);
     background-attachment: fixed;
     background-position: top;
-    height: 350px;
+    height: 450px;
     justify-content: center;
     align-content: center;
     background-size: cover;
@@ -341,13 +341,13 @@ li, li footer {
 /*MAIN BANNER COPY*/
 .promo-text {
     position: relative;
-    top: 70px;
+    top: 60px;
     width: 80%;
     height: 50%;
+    padding: 0px 10px;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 1rem 2.5rem -0.75rem rgba(51,63,72,.22);
-    padding: 10px 15px;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -357,7 +357,7 @@ li, li footer {
 .promo-text>h1 {
     font-size: 1.75rem;
     font-weight: 600;
-    margin: 10px;
+    margin: 5px;
 }
 
 .promo-text>h2 {
@@ -529,7 +529,7 @@ li, li footer {
     display: list-item;
     text-align: left;
     list-style-position:inherit;
-    line-height: 18px;
+    line-height: 1.25rem;
 }
 
 .nippers-info-tiles {
@@ -630,7 +630,7 @@ li, li footer {
 .table td, .table-additional td {
     font-weight: 200;
     font-size: 0.85rem;
-    line-height: 18px;
+    line-height: 1.25rem;
     padding: 10px 15px;
     vertical-align: top;
     text-align: left;
@@ -650,7 +650,7 @@ li, li footer {
     background-attachment: fixed;
     background-position: top;
     background-size: cover;
-    height: 120vh;
+    height: 160vh;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -872,7 +872,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
     padding: 30px 20px;
     text-align: center;
     margin: auto;
-    animation: flipInX 1s ease-in-out;
+    animation: flipInX 2s ease-in-out;
 }
 
 .modal-button {
@@ -969,51 +969,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
 }
 
 /*CAROUSEL*/
-.carousel {
-    --current-slide: 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.slider {
-    display: inline;
-}
-
-.slider button {
-    cursor: pointer;
-    position: absolute;
-    top: 60%;
-    width: auto;
-    padding: 30px 10px 30px 10px;
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
-    transition: 0.3s ease;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    z-index: 100;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-}
-
-.slider .button-left {
-    left: 2%;
-}
-
-.slider .button-right {
-    right: 2%;
-}
-
-.slider .button-right:hover, .button-left:hover {
-    box-shadow: 0 0 5px #fff;
-    border: 1px solid #fff;
-    color: white;
-    background-color: #e7d329;
-}
-
-.slides {
+.carousel-container {
     background-image: url(https://i.imgur.com/WPrt2sg.jpg);
     background-attachment: fixed;
     background-position: top;
@@ -1023,34 +979,15 @@ input[type="text"], input[type="email"], input[type="tel"] {
     justify-content: center;
     align-content: center;
     position: relative;
-    overflow: hidden;
 }
 
-.slide {
-    position: absolute;
-    top: 50px;
-    width: 65%;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
-    transform: translateX(100%); 
-    transition: transform 0.5s;
-    opacity: 0;
-}
-
-.slide.showing {
-    transform: translateX(0);
-    z-index: 2;
-    opacity: 1;
-}
-
-.slide-content {
-    position: absolute;
-    top: 20px;
-    width: 70%;
+.carousel-overlay {
+    position: relative;
+    top: 30px;
+    width: 50vw;m
     height: fit-content;
     background-color: rgba(255, 255, 255, 0.95);
-    padding: 35px 50px;
+    padding: 35px 20px;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -1058,76 +995,66 @@ input[type="text"], input[type="email"], input[type="tel"] {
     justify-content: center;
 }
 
-.slide-tag {
-    background-color: rgb(3, 59, 55);
-    color: white;
+.carousel-inner {
+    width: 95%;
     display: flex;
-    justify-content: flex-start;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: fit-content;
-    height: 30px;
-    padding: 0 15px;
-    align-items: center;
-    box-shadow: 0 5px 5px #c5c5c5;
-    border-radius: 0 0.5rem 0 0.25rem;
-    text-transform: uppercase;
+    justify-content: center;
+    margin: 0px;
+    position: relative;
+    background-size: contain;
 }
 
-.carousel-item-copy {
-    display: flex;
+.carousel-inner img {
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 1rem 2.5rem -0.75rem rgba(51,63,72,.22)!important;
+    margin: auto;
+}
+
+#club2club-logo, #alsc-logo {
+    width: 150px!important;
+    height: auto;
+}
+
+.carousel-item, .carousel-item .active {
+    margin: 0px;
+}
+
+.d-block {
+    display: flex!important;
     flex-direction: column;
     align-items: center;
 }
 
-.carousel-item-copy > h1 {
-    margin: 15px 0;
-}
-
-.carousel-item-copy > h2 {
-    font-size: 1.05rem;
-    padding-bottom: 25px;
-}
-
-.slides img {
-    width: 150px;
-    height: auto;
-    margin: 10px 0;
-    border-radius: 1.25rem;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
-}
-
-.slides .happy-sad-man {
-    width: 90%;
-}
-
 .carousel-item-details {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     padding-bottom: 25px;
 }
 
-.slide > h1 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin: 10px;
+.carousel-item > h1, .carousel-item .active > h1 {
+    font-family: 'Antonio', sans-serif!important;
+    font-weight: 800;
+    text-transform: uppercase!important;
+    text-align: center!important;
+    margin: 15px;
 }
 
-.slide > h2 {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.35rem;
-    text-transform: none;
-    margin: 0;
-    padding: 5px 0 50px 0;
+.carousel-item > h2, .carousel-item .active > h2 {
+    font-family: 'Roboto', sans-serif!important;
+    text-align: center;
+    font-size: 1.05rem!important;
+    font-weight: 800!important;
+    color: rgb(3, 59, 55);
+    padding-bottom: 30px;
+    margin: 15px;
 }
 
 .carousel-item-details-copy > h3 {
-    font-size: 1.15rem;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 1.15rem!important;
     font-weight: 600;
     color: black;
     text-transform: capitalize;
@@ -1139,8 +1066,22 @@ input[type="text"], input[type="email"], input[type="tel"] {
     line-height: 1.25rem;
 }
 
-.carousel .slides #host-event {
-    width: 100%;
+.carousel-control-prev, .carousel-control-next {
+    opacity: 0.8;
+    top: 180px;
+    border: none;
+    height: 100px;
+    width: 5%;
+    border-radius: 5px 0 0 5px;
+    background-color: rgb(3, 59, 55);
+}
+
+.carousel-control-prev {
+    border-radius: 0 5px 5px 0;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: #e7d329;
 }
 
 /*MERCHANDISE*/
@@ -1157,7 +1098,6 @@ input[type="text"], input[type="email"], input[type="tel"] {
     border-radius: 10px;
     padding: 25px;
     margin: 25px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
     }
 
 .merchandise img {
@@ -1171,7 +1111,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
     margin: 15px;
     display: grid;
     grid-template-columns: 1fr 3fr;
-    box-shadow: none;
+    box-shadow: 0 1rem 2.5rem -0.75rem rgba(51,63,72,.22);
     }
 
 .item-details p {
@@ -1249,7 +1189,7 @@ footer {
     margin-left: 0px;
     width: auto;
     height: 120px;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 10px;
     }
 
@@ -1291,7 +1231,7 @@ footer {
 
 .footer-nav-contents .small {
     font-size: 0.85rem;
-    line-height: 20px;
+    line-height: 1.5rem;
     font-weight: 300;
     }
 
@@ -1411,7 +1351,7 @@ footer {
     }
 
 /*DESKTOP SPECS*/
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
     .promo-heading-home, .promo-heading-nippers, .promo-heading-membership, .promo-heading-aboutus, .promo-heading-competition, .promo-heading-lifesaving, .promo-heading-events, .promo-heading-merchandise {
         justify-content: center;
         align-items: center;
@@ -1421,7 +1361,7 @@ footer {
 
     .promo-text {
         position: relative;
-        top: 20px;
+        top: 0px;
         width: 35%;
         height: auto;
         background-color: rgba(255, 255, 255, 0.8);
@@ -1563,7 +1503,7 @@ footer {
     .table td, .table-additional td {
         font-weight: 200;
         font-size: 0.85rem;
-        line-height: 18px;
+        line-height: 1.25rem;
         padding: 10px 15px;
         vertical-align: top;
         text-align: left;
@@ -1620,33 +1560,6 @@ footer {
 
     .guides a:hover {
         color: rgb(25, 153, 144);
-    }
-    
-    /*EVENTS CAROUSEL*/
-    .slides {
-        height: 110vh;
-    }
-    
-    .slider button {
-        top: 40%;
-        padding: 50px 30px 50px 30px;
-    }
-    
-    .slider .button-left {
-        left: 20%;
-    }
-    
-    .slider .button-right {
-        right: 20%;
-    }
-    
-    .slides .happy-sad-man {
-        width: 300px;
-    }
-    
-    .carousel-item-details {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
     }
 
     /*JOIN PAGE*/
@@ -1858,7 +1771,6 @@ footer {
         border-radius: 10px;
         padding: 25px;
         margin: 25px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
     }
 
     .merchandise img {
@@ -1867,12 +1779,12 @@ footer {
     }
 
     .merchandise .item-details {
-        background-color: #efefef;
+        background-color: #f4f4f4;
         padding: 5px 5px 0px 15px;
         margin: 15px;
         display: grid;
-        grid-template-columns: 1fr 3fr;
-        box-shadow: none;
+        grid-template-columns: 1fr 2fr;
+        box-shadow: 0 1rem 2.5rem -0.75rem rgba(51,63,72,.22);
     }
 
     .item-details p {
@@ -1881,6 +1793,8 @@ footer {
 
     .item-details #strong {
         font-weight: 600;
+        text-align: right;
+        padding-right: 10px;
     }
 
     /*FOOTER*/
