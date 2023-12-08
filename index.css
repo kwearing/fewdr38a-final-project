@@ -252,7 +252,7 @@ li, li footer {
     font-size: 0.8rem;
     border-radius: 5rem;
     border: 2px solid #e7d329;
-    background: url(https://i.imgur.com/YgB8Ed8.png);
+    background: url(./Images/scroll-to-top-button.png);
 }
 
 .scroll-to-top.scroll-to-top--show {
@@ -263,7 +263,7 @@ li, li footer {
 
 /*MAIN BANNERS*/
 .promo-heading-home {
-    background-image: url(https://nbrs.com.au/_next/image?url=https%3A%2F%2Fcms.nbrs.com.au%2Fweb%2Fmedia%2F_2400xAUTO_crop_center-center_none%2Fimage-1_2880x1800_2023-06-06-064623_gduh.jpg&w=1920&q=75);
+    background-image: url(./Images/alsc-home-banner.jpg);
     background-position: center;
     height: 600px;
     justify-content: center;
@@ -730,7 +730,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
 
 .membership-options {
     width: 80%;
-    display: flex;
+    display: inline-block;
     justify-content: flex-start;
     justify-items: flex-start;
     text-wrap: wrap;
@@ -743,77 +743,13 @@ input[type="text"], input[type="email"], input[type="tel"] {
     text-align: left;
 }
 
-/*TOOLTIP*/
-.tooltip {
-    position: relative;
-    top: 2rem;
-    right: 3rem;
-    background: #e7d329;
-    padding: 5px 10px;
-    font-size: 1rem;
-    border-radius: 100%;
-    color: black;
-    display: flex;
-    text-wrap: wrap;
-    font-weight: 600;
+#membership-prompt {
+    text-align: left;
 }
-  
-.tooltip:before, .tooltip:after {
-    position: absolute;
-    content: '';
-    opacity: 0;
-    transition: all 0.4s ease;
-}
-  
-.tooltip:before {
-    border-width: 10px 8px 0 8px;
-    border-style: solid;
-    border-color: #e7d329 transparent transparent transparent;
-    top: -15px;
-    transform: translateY(20px);
-}
-  
-.tooltip:after {
-    position: absolute;
-    content: attr(data-tooltip);
-    background: #e7d329;
-    width: 200px;
-    height: fit-content;
-    font-size: 13px;
-    font-weight: 300;
-    top: -50px;
-    right: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    letter-spacing: 1px;
-    transform: translateY(5px);
-}
-  
-.tooltip:hover::before,
-.tooltip:hover::after {
-    opacity: 1;
-    transform: translateY(-5px);
-}
-  
-@keyframes shake {
-    0% { 
-        transform: rotate(2deg);
-    }
-    50% {
-        transform: rotate(-3deg);
-    }
-    70% {
-        transform: rotate(3deg);
-    }
 
-    100% {
-        transform: rotate(0deg);
-    }
+.tooltip {
+    display: none;
 }
-  
-  #anim:hover {
-    animation: shake 500ms ease-in-out forwards;
-  }
 
 /*MEMBERSHIP OPTIONS*/
 .wwc-check {
@@ -821,7 +757,6 @@ input[type="text"], input[type="email"], input[type="tel"] {
     flex-direction: column;
     justify-content: flex-start;
     justify-items: flex-start;
-
 }
 
 .checkbox {
@@ -964,7 +899,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
 
 /*CAROUSEL*/
 .carousel-container {
-    background-image: url(https://i.imgur.com/WPrt2sg.jpg);
+    background-image: url(./Images/carousel-container.jpg);
     background-attachment: fixed;
     background-position: top;
     background-size: cover;
@@ -1125,7 +1060,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
 .promo-footer {
     display: flex;
     justify-content: center;
-    background-image: url(https://i.imgur.com/MDCBpdq.jpg);
+    background-image: url(./Images/promo-footer.jpg);
     height: 250px;
     background-position: center;
     background-size: cover;
@@ -1301,52 +1236,52 @@ footer {
 
 /*ASSETS*/
 .nippers {
-    background-image: url(https://i.imgur.com/jikDH8i.jpg);
+    background-image: url(./Images/tiles-nippers.jpg);
     }
 
 .lifesaving {
-    background-image: url(https://lsv.com.au/wp-content/uploads/SURF-LIFE-SAVERS-FF897579-2944091.jpg);
+    background-image: url(./Images/tiles-lifesaving.jpg);
     }
 
 .competitions {
-    background-image: url(https://i.imgur.com/r6yi2Ak.jpg);
+    background-image: url(./Images/tiles-competition.jpg);
     }
 
 
 .surf {
-    background: url(https://i.imgur.com/FpJD9ZI.jpg);
+    background: url(./Images/nippers-img1.jpg);
     }
 
 .parental {
-    background: url(https://i.imgur.com/rZexHDH.jpg);
+    background: url(./Images/nippers-img2.jpg);
     }
 
 .comps {
-    background: url(https://i.imgur.com/jikDH8i.jpg);
+    background: url(./Images/tiles-nippers.jpg);
     }
 
 .training {
-    background: url(https://i.imgur.com/YHvHuuh.jpg);
+    background: url(./Images/nippers-img4.jpg);
     }
 
 .calendar {
-    background: url(https://i.imgur.com/vQ8G4Ak.jpg);
+    background: url(./Images/nippers-img5.jpg);
     }
 
 .patrol {
-    background: url(https://i.imgur.com/FpJD9ZI.jpg);
+    background: url(./Images/lifesaving-img1.jpg);
     }
 
 .awards {
-    background: url(https://i.imgur.com/ao5RwLj.jpg);
+    background: url(./Images/lifesaving-img2.jpg);
     }
 
 .patrol-hours {
-    background: url(https://i.imgur.com/vQ8G4Ak.jpg);
+    background: url(./Images/nippers-img5.jpg);
     }
 
 .education {
-    background: url(https://i.imgur.com/tm1jZs7.jpg);
+    background: url(./Images/lifesaving-img4.jpg);
     }
 
 /*DESKTOP SPECS*/
@@ -1747,6 +1682,18 @@ footer {
         align-items: center;
     }
 
+    .membership {
+        position: relative;
+        width: 100vw;
+        height: fit-content;
+        padding: 25px 15px 0px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 0px;
+    }
+    
     .membership-options {
         display: flex;
         justify-content: flex-start;
@@ -1754,12 +1701,18 @@ footer {
         text-wrap: wrap;
         position: relative;
     }
-
-    .membership-options h3 {
+    
+    .membership h3, .membership-options h3, .join-container h3 {
         padding-top: 15px;
+        padding-right: 10px;
+        text-align: left;
     }
 
     /*TOOLTIP*/
+    #membership-prompt {
+        display: none;
+    }
+
     .tooltip {
         position: relative;
         top: 2rem;
