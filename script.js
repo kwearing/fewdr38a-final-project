@@ -70,8 +70,15 @@ submitBtn.addEventListener('click', function (event) {
 submitModalBtn.addEventListener('click', function () {
     submitModalContainer.style.display = "none";
     inputs.forEach(input => {
+        if (input.type === 'checkbox'){
+            input.checked = false;
+        } 
+        else {
         input.value = '';
-        input.type.checkbox ='';
+        input.style.border = '';
+        input.style.backgroundColor = '';
+        input.placeholder = '';
+        }
     })
 })
 
