@@ -1506,7 +1506,7 @@ footer {
         background-attachment: fixed;
         background-position: top;
         background-size: cover;
-        height: 150vh;
+        min-height: 150vh;
         display: flex;
         justify-content: center;
         align-content: center;
@@ -1517,7 +1517,7 @@ footer {
         position: relative;
         top: 30px;
         width: 50vw;
-        height: fit-content;
+        min-height: fit-content;
         background-color: rgba(255, 255, 255, 0.95);
         padding: 35px 20px;
         border-radius: 0.5rem;
