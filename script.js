@@ -66,7 +66,7 @@ submitBtn.addEventListener('click', function (event) {
     submitModalContainer.style.display = "block";
 });
 
-// WHEN USER CLICKS CLOSE, THE POP UP DISAPPEARS
+// WHEN USER CLICKS CLOSE, THE POP UP DISAPPEARS AND FORM RESETS
 submitModalBtn.addEventListener('click', function () {
     submitModalContainer.style.display = "none";
     inputs.forEach(input => {
